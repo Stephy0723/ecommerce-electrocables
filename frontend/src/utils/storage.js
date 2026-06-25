@@ -85,7 +85,7 @@ export function money(value) {
     maximumFractionDigits: 0,
     minimumFractionDigits: 0
   }).format(Number(value) || 0);
-  return `RD$ ${formatted}`;
+  return `RD$ ${formatted} DOP`;
 }
 
 export function orderTotals(items = []) {
