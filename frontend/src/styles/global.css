@@ -1,0 +1,257 @@
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--page);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: var(--transition);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ── Form Controls ── */
+input, select, textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--shell);
+  color: var(--ink);
+  font-size: 14px;
+  outline: none;
+  transition: var(--transition);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--muted-light);
+}
+
+input:hover, select:hover, textarea:hover {
+  border-color: var(--line-strong);
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--electric);
+  box-shadow: 0 0 0 3px var(--electric-soft);
+}
+
+textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+/* ── App Layout — flush, no gaps ── */
+.store-app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  transition: grid-template-columns 0.35s var(--ease);
+}
+
+.store-app.sidebar-collapsed {
+  grid-template-columns: 68px minmax(0, 1fr);
+}
+
+.store-workspace {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--page);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.store-content-scroll {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.store-page-container {
+  padding: 28px 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.store-page-container.catalog-page-container {
+  padding: 0;
+}
+
+main {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  flex: 1;
+}
+
+/* ── Button System ── */
+.btn-primary,
+button.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
+  background: var(--brand);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  border: 1.5px solid var(--brand);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.btn-primary:hover,
+button.primary-btn:hover {
+  background: var(--electric);
+  border-color: var(--electric);
+  box-shadow: var(--shadow-blue);
+  transform: translateY(-1px);
+}
+
+button.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
+  background: var(--shell) !important;
+  color: var(--ink) !important;
+  border: 1.5px solid var(--line) !important;
+  box-shadow: none !important;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+button.secondary:hover {
+  background: var(--surface-soft) !important;
+  border-color: var(--line-strong) !important;
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* ── Section Headings ── */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--electric);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 40px 0 20px;
+}
+
+.section-head.tight {
+  margin-top: 16px;
+}
+
+.section-head h1, .section-head h2 {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.025em;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ── Product Grid ── */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* ── Scrollbar Styling ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--line-strong);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-light);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .store-app {
+    grid-template-columns: 1fr !important;
+  }
+
+  .store-workspace {
+    height: auto;
+    overflow: visible;
+  }
+
+  .store-content-scroll {
+    padding: 16px;
+    overflow: visible;
+  }
+}

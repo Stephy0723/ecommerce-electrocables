@@ -1,0 +1,315 @@
+.store-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 24px;
+  background: var(--shell);
+  border-bottom: 1px solid var(--line);
+  flex-shrink: 0;
+}
+
+.search-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: var(--radius-full);
+  background: var(--surface-soft);
+  color: var(--muted);
+  border: 1.5px solid transparent;
+  transition: var(--transition);
+}
+
+.search-box:focus-within {
+  border-color: var(--electric);
+  background: var(--shell);
+  box-shadow: 0 0 0 3px var(--electric-soft);
+}
+
+.search-box input {
+  flex: 1;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+.search-box input:focus {
+  box-shadow: none;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon-button {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  min-width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--ink-secondary);
+  border: 1.5px solid transparent;
+  transition: var(--transition);
+}
+
+.icon-button:hover {
+  background: var(--surface-soft);
+  color: var(--electric);
+}
+
+.icon-button .badge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  min-width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  padding: 0 5px;
+  border-radius: var(--radius-full);
+  color: #ffffff;
+  background: var(--electric);
+  font-size: 10px;
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.35);
+  border: 2px solid var(--shell);
+}
+
+.menu-button {
+  display: none;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .store-header {
+    padding: 10px 16px;
+  }
+
+  .menu-button {
+    display: inline-grid;
+  }
+
+  .mobile-nav.open {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 8px;
+    width: 100%;
+    margin-top: 10px;
+    order: 3;
+    flex-basis: 100%;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+  }
+
+  .mobile-nav button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    min-height: 38px;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    background: var(--surface-soft);
+    font-weight: 500;
+    font-size: 13px;
+  }
+
+  .mobile-nav button.active {
+    background: var(--electric-soft);
+    color: var(--electric);
+  }
+}
+
+@media (max-width: 640px) {
+  .search-box {
+    order: 2;
+    flex-basis: 100%;
+    margin-top: 8px;
+  }
+
+  .header-actions {
+    flex: 1;
+    justify-content: flex-end;
+  }
+}
+
+/* ── Notification Dropdown Menu ── */
+.notification-dropdown-wrapper {
+  position: relative;
+}
+
+.customer-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  min-width: 132px;
+  padding: 0 18px;
+  border-radius: var(--radius-sm);
+  background: #111827;
+  border: 1.5px solid #111827;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.customer-pill:hover,
+.customer-pill.signed {
+  border-color: var(--electric);
+  background: var(--electric);
+  color: #ffffff;
+  box-shadow: var(--shadow-blue);
+}
+
+.customer-pill span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.notifications-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 320px;
+  background: var(--shell);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-xl);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: notifPop 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes notifPop {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.notif-dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-soft);
+}
+
+.notif-dropdown-header h3 {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.notif-clear-btn {
+  font-size: 11px !important;
+  font-weight: 700;
+  color: var(--electric);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: var(--radius-xs);
+  transition: var(--transition-fast);
+}
+
+.notif-clear-btn:hover {
+  background: var(--electric-soft);
+}
+
+.notif-dropdown-body {
+  max-height: 320px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.notif-empty-text {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  padding: 24px 16px;
+  font-style: italic;
+}
+
+.notif-dropdown-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.notif-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.notif-dropdown-item:hover {
+  background: var(--surface-soft);
+}
+
+.notif-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--muted-light);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.notif-dropdown-item.unread .notif-indicator {
+  background: var(--electric);
+  box-shadow: 0 0 0 2px var(--electric-soft);
+}
+
+.notif-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.notif-item-content p {
+  font-size: 12px;
+  color: var(--ink-secondary);
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.notif-dropdown-item.unread .notif-item-content p {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.notif-item-content small {
+  font-size: 10px;
+  color: var(--muted);
+}

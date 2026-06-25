@@ -1,0 +1,141 @@
+.admin-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.admin-grid-layout.wide {
+  grid-template-columns: minmax(340px, 0.9fr) minmax(0, 1.1fr);
+}
+
+.admin-product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-sub-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.submit-prod-btn {
+  width: 100%;
+}
+
+.admin-table-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 700px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.admin-product-row {
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr) 90px 70px 110px;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: var(--radius);
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+}
+
+.admin-prod-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.admin-prod-details {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.admin-prod-details b {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-prod-details span {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 1px;
+}
+
+.admin-prod-price {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.admin-prod-stock {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.admin-prod-actions {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+.admin-action-btn {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.admin-action-btn:hover {
+  background: var(--brand);
+  color: white;
+  border-color: var(--brand);
+}
+
+.admin-action-btn.danger-text {
+  color: var(--danger);
+}
+
+.admin-action-btn.danger-text:hover {
+  background: var(--danger);
+  color: white;
+  border-color: var(--danger);
+}
+
+@media (max-width: 1024px) {
+  .admin-grid-layout.wide {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .admin-product-row {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 8px;
+  }
+  
+  .admin-prod-img {
+    margin: 0 auto;
+  }
+  
+  .admin-prod-actions {
+    justify-content: center;
+  }
+}

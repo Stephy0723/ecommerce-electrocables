@@ -1,0 +1,127 @@
+.departments-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.department-main-head {
+  align-items: flex-start;
+  margin-top: 16px;
+}
+
+.department-main-head p {
+  color: var(--muted);
+  font-size: 14px;
+  max-width: 620px;
+  margin-top: 6px;
+}
+
+.departments-list {
+  display: grid;
+  gap: 24px;
+}
+
+.department-section,
+.department-hero {
+  background: var(--shell);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.department-section {
+  padding: 24px;
+  display: grid;
+  gap: 18px;
+}
+
+.department-section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.department-section-head h2 {
+  color: var(--ink);
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.department-section-head p {
+  color: var(--muted);
+  font-size: 13px;
+  max-width: 640px;
+  margin-top: 4px;
+}
+
+.department-card-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.department-hero {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  padding: 28px;
+}
+
+.department-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius);
+  display: grid;
+  place-items: center;
+  background: var(--electric-soft);
+  color: var(--electric);
+}
+
+.department-hero h1 {
+  color: var(--ink);
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.department-hero p {
+  color: var(--muted);
+  font-size: 14px;
+  max-width: 720px;
+  margin-top: 4px;
+}
+
+.department-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-soft);
+  color: var(--ink-secondary);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+@media (max-width: 760px) {
+  .department-section-head,
+  .department-summary-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .department-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .department-hero h1 {
+    font-size: 28px;
+  }
+}

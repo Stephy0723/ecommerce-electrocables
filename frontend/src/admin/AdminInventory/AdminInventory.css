@@ -1,0 +1,252 @@
+.inventory-product-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.inventory-product-cell svg {
+  flex-shrink: 0;
+}
+
+/* Metrics Deck */
+.inventory-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.inv-metric-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.inv-metric-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--electric-soft);
+}
+
+.inv-metric-card svg {
+  color: var(--electric);
+  flex-shrink: 0;
+  padding: 10px;
+  background: var(--surface-soft);
+  border-radius: var(--radius-sm);
+}
+
+.inv-metric-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.inv-metric-info span {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.inv-metric-info strong {
+  font-size: 18px;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.inv-metric-info small {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Badges & Pills */
+.sku-badge {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+}
+
+.margin-pill {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  display: inline-block;
+}
+
+.margin-high {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+}
+
+.margin-low {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--accent);
+}
+
+.reorder-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+}
+
+.reorder-badge.reorder-alert {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+  border-color: rgba(239, 68, 68, 0.2);
+  font-weight: 700;
+  animation: pulse-danger 2s infinite;
+}
+
+@keyframes pulse-danger {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* Input Fields */
+.inline-sku-input {
+  width: 90px;
+  min-height: 28px;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-family: var(--font-mono, monospace);
+  font-weight: 600;
+  border: 1.5px solid var(--electric);
+  border-radius: var(--radius-xs);
+  background: var(--shell);
+  color: var(--ink);
+  outline: none;
+}
+
+.inline-stock-input {
+  width: 65px;
+  min-height: 28px;
+  padding: 2px 6px;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  border: 1.5px solid var(--electric);
+  border-radius: var(--radius-xs);
+  background: var(--shell);
+  color: var(--ink);
+  outline: none;
+}
+
+.currency-input-wrapper {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  background: var(--shell);
+  border: 1.5px solid var(--electric);
+  border-radius: var(--radius-xs);
+}
+
+.currency-symbol {
+  font-size: 11px;
+  color: var(--muted);
+  padding-left: 6px;
+  font-weight: 600;
+}
+
+.inline-price-input {
+  width: 60px;
+  min-height: 28px;
+  padding: 2px 4px;
+  font-size: 12px;
+  font-weight: 700;
+  border: none;
+  background: transparent;
+  color: var(--ink);
+  outline: none;
+}
+
+.inline-sku-input:focus,
+.inline-stock-input:focus,
+.currency-input-wrapper:focus-within {
+  box-shadow: 0 0 0 2px var(--electric-soft);
+}
+
+.inline-edit-actions {
+  display: inline-flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+.inline-edit-actions button {
+  min-height: 28px;
+  width: 28px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+}
+
+.save-btn {
+  background: var(--success) !important;
+  color: #ffffff !important;
+  border: 1px solid var(--success) !important;
+}
+
+.save-btn:hover {
+  background: #059669 !important;
+  transform: translateY(-1px);
+}
+
+.cancel-btn {
+  background: var(--surface-soft) !important;
+  color: var(--muted) !important;
+  border: 1px solid var(--line) !important;
+}
+
+.cancel-btn:hover {
+  background: var(--surface-hover) !important;
+  color: var(--ink) !important;
+  transform: translateY(-1px);
+}
+
+.adjust-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px !important;
+  min-height: 28px !important;
+  padding: 4px 8px !important;
+  border-radius: var(--radius-xs) !important;
+}
+
+/* Low stock warning row highlight */
+.low-stock-highlight {
+  background-color: rgba(239, 68, 68, 0.02) !important;
+}
+
+.low-stock-highlight:hover td {
+  background-color: rgba(239, 68, 68, 0.04) !important;
+}
+
+.text-ink {
+  color: var(--ink);
+}
+
+.text-danger {
+  color: var(--danger);
+  font-weight: 700;
+}

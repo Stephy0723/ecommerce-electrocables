@@ -1,0 +1,22 @@
+{
+  "homepage": "https://salyl.github.io/ecommerce-electrocables/",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:pages": "vite build --base=/ecommerce-electrocables/ && node scripts/copy-404.mjs",
+    "preview": "vite preview",
+    "predeploy": "npm run build:pages",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "framer-motion": "latest",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}

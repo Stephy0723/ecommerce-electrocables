@@ -1,0 +1,62 @@
+.summary-card {
+  position: sticky;
+  top: 80px;
+  background: var(--shell);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.summary-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--ink);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+  letter-spacing: -0.02em;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.summary-row span {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.summary-row b {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.summary-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  margin-top: 4px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.summary-total-row span {
+  color: var(--ink);
+}
+
+.summary-total-row b {
+  color: var(--electric);
+  letter-spacing: -0.02em;
+}
+
+.checkout-btn-summary {
+  width: 100%;
+  margin-top: 8px;
+}

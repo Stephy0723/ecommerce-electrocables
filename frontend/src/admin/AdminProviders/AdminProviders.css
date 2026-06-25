@@ -1,0 +1,257 @@
+.admin-providers-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.providers-split-pane {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.providers-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.providers-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.provider-list-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  background: var(--shell);
+  border: 1.5px solid var(--line);
+  text-align: left;
+  transition: var(--transition-fast);
+  cursor: pointer;
+  width: 100%;
+}
+
+.provider-list-card:hover {
+  border-color: var(--line-strong);
+  background: var(--surface-soft);
+}
+
+.provider-list-card.active {
+  border-color: var(--electric);
+  background: var(--electric-soft);
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.05);
+}
+
+.provider-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+}
+
+.provider-list-card.active .provider-card-header {
+  color: var(--electric-hover);
+}
+
+.provider-card-header strong {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.provider-card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Detail Panel */
+.provider-details-panel {
+  background: var(--shell);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  box-shadow: var(--shadow);
+}
+
+.provider-details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 20px;
+}
+
+.provider-tag {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--electric);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.provider-details-header h2 {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--ink);
+  letter-spacing: -0.025em;
+}
+
+.provider-details-header p {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Info grid */
+.provider-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.info-cell {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.info-cell svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.info-cell svg.text-electric {
+  color: var(--electric);
+}
+
+.info-cell div {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-cell span {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.info-cell strong {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-secondary);
+}
+
+/* Provider Metrics */
+.provider-metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.prov-metric-card {
+  background: var(--shell);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  box-shadow: var(--shadow);
+}
+
+.prov-metric-card svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.prov-metric-card svg.text-danger { color: var(--danger); }
+.prov-metric-card svg.text-electric { color: var(--electric); }
+
+.prov-metric-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.prov-metric-info span {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.prov-metric-info strong {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--ink);
+}
+
+.prov-metric-info small {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Sub Panels list */
+.prov-sub-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.prov-sub-panel h3 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  border-left: 3px solid var(--electric);
+  padding-left: 10px;
+}
+
+.text-danger {
+  color: var(--danger) !important;
+}
+
+@media (max-width: 1024px) {
+  .providers-split-pane {
+    grid-template-columns: 1fr;
+  }
+  
+  .providers-cards-container {
+    max-height: 180px;
+  }
+}
+
+@media (max-width: 640px) {
+  .provider-info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .provider-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .provider-details-panel {
+    padding: 20px;
+  }
+}

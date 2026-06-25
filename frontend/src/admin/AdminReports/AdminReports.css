@@ -1,0 +1,55 @@
+.admin-reports-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.report-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: var(--muted);
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--line);
+}
+
+.report-item b {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.income-text {
+  color: var(--success) !important;
+}
+
+.total-net-row {
+  border-bottom: none;
+  font-weight: 700;
+  font-size: 15px;
+  margin-top: 6px;
+  color: var(--ink);
+}
+
+.report-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.top-sold-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--muted);
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--line);
+}
+
+.top-sold-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
