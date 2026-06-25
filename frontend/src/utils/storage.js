@@ -5,8 +5,21 @@ const OLD_KEY = 'electrocables-store-v1';
 const THEME_KEY = 'electrocables-theme';
 const ADMIN_KEY = 'electrocables-admin-session';
 const CUSTOMER_KEY = 'electrocables-customer-session';
+const CATALOG_ASSETS_VERSION = 2;
 
 const cloneInitial = () => JSON.parse(JSON.stringify(initialStore));
+
+const syncCatalogAssets = (store) => {
+  if (store.catalogAssetsVersion === CATALOG_ASSETS_VERSION) return store;
+
+  const seedImages = new Map(initialStore.products.map((product) => [product.id, product.images]));
+  const products = (store.products || []).map((product) => {
+    const images = seedImages.get(product.id);
+    return images ? { ...product, images } : product;
+  });
+
+  return { ...store, products, catalogAssetsVersion: CATALOG_ASSETS_VERSION };
+};
 
 export function initStore() {
   const current = localStorage.getItem(KEY);
@@ -19,7 +32,9 @@ export function initStore() {
 
 export function getStore() {
   try {
-    return { ...cloneInitial(), ...JSON.parse(localStorage.getItem(KEY) || '{}') };
+    const store = syncCatalogAssets({ ...cloneInitial(), ...JSON.parse(localStorage.getItem(KEY) || '{}') });
+    localStorage.setItem(KEY, JSON.stringify(store));
+    return store;
   } catch {
     localStorage.setItem(KEY, JSON.stringify(cloneInitial()));
     return cloneInitial();
