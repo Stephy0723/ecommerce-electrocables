@@ -197,6 +197,15 @@ export default function App() {
               {path === '/carrito' ? <CartPage store={store} save={handleSaveStore} navigate={navigate} showToast={showToast} /> : null}
               {path === '/checkout' ? <CheckoutPage store={store} save={handleSaveStore} navigate={navigate} showToast={showToast} customerSession={customerSession} /> : null}
               {path === '/favoritos' ? <FavoritesPage store={store} navigate={navigate} addCart={addCart} toggleFavorite={toggleFavorite} showToast={showToast} /> : null}
+              {(path === '/departamentos' || departmentId) ? (
+                <DepartmentsPage
+                  store={store}
+                  navigate={navigate}
+                  addCart={addCart}
+                  toggleFavorite={toggleFavorite}
+                  department={departmentId}
+                />
+              ) : null}
               {path === '/cuenta' ? (
                 <AccountPage
                   store={store}
@@ -216,7 +225,7 @@ export default function App() {
                 />
               ) : null}
               {path === '/perfil' ? <EmptyState title="Perfil de cliente" text="Vista preparada para datos reales de cliente cuando el backend se conecte." /> : null}
-              {!['/', '/catalogo', '/carrito', '/checkout', '/favoritos', '/cuenta', '/pedidos', '/perfil'].includes(path) && !productId ? (
+              {!['/', '/catalogo', '/carrito', '/checkout', '/favoritos', '/departamentos', '/cuenta', '/pedidos', '/perfil'].includes(path) && !productId && !departmentId ? (
                 <EmptyState title="Ruta no encontrada" text="La página solicitada no existe en la tienda." action="Volver al inicio" onAction={() => navigate('/')} />
               ) : null}
             </div>
@@ -229,3 +238,4 @@ export default function App() {
     </>
   );
 }
+
