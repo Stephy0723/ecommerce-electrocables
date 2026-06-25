@@ -119,21 +119,6 @@ export default function HomePage({ store, navigate, addCart, toggleFavorite }) {
         </div>
       </section>
 
-      <section className="promo-strip">
-        <article className="promo-card">
-          <b>Ofertas de obra</b>
-          <span>Descuentos visibles en cables, herramientas y canalizacion seleccionada.</span>
-        </article>
-        <article className="promo-card">
-          <b>Carrito y checkout</b>
-          <span>Compra, confirma datos, selecciona entrega y genera pedido.</span>
-        </article>
-        <article className="promo-card">
-          <b>Seguimiento de pedidos</b>
-          <span>Consulta ordenes, estado de despacho y repite compras.</span>
-        </article>
-      </section>
-
       <section className="section-head">
         <div>
           <span className="eyebrow">Departamentos</span>

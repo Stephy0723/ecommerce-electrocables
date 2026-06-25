@@ -196,7 +196,7 @@
 }
 
 .hero-price-row strong {
-  color: var(--ink);
+  color: var(--danger);
   font-size: 26px;
   font-weight: 900;
 }
@@ -209,14 +209,18 @@
 .offers-section {
   margin-top: 34px;
   padding: 24px;
-  background: var(--shell);
-  border: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--danger-soft) 0%, var(--shell) 44%);
+  border: 1.5px solid rgba(239, 68, 68, 0.22);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
 }
 
 .offers-head {
   margin: 0 0 20px;
+}
+
+.offers-head .eyebrow {
+  color: var(--danger);
 }
 
 .offers-head p {
@@ -242,7 +246,7 @@
 }
 
 .offer-card:hover {
-  border-color: var(--electric);
+  border-color: var(--danger);
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
 }
@@ -337,7 +341,7 @@
 }
 
 .offer-price strong {
-  color: var(--ink);
+  color: var(--danger);
   font-size: 18px;
   font-weight: 900;
 }
@@ -352,41 +356,6 @@
   min-height: 38px !important;
   padding: 8px 12px !important;
   font-size: 13px !important;
-}
-
-.promo-strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 32px;
-}
-
-.promo-card {
-  padding: 20px;
-  background: var(--shell);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  transition: var(--transition);
-}
-
-.promo-card:hover {
-  border-color: var(--electric);
-  box-shadow: var(--shadow-md);
-}
-
-.promo-card b {
-  display: block;
-  color: var(--ink);
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.promo-card span {
-  display: block;
-  margin-top: 4px;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.5;
 }
 
 .category-grid {
@@ -478,8 +447,7 @@
     align-items: stretch;
   }
 
-  .offer-grid,
-  .promo-strip {
+  .offer-grid {
     grid-template-columns: 1fr;
   }
 }

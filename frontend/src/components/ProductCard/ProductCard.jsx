@@ -11,7 +11,7 @@ export default function ProductCard({ product, store, navigate, addCart, toggleF
 
   return (
     <motion.article 
-      className="product-card" 
+      className={`product-card ${product.offerPrice ? 'has-offer' : ''}`} 
       whileHover={{ y: -6 }} 
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
     >

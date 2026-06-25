@@ -28,16 +28,32 @@ import {
   setThemePreference
 } from './utils/storage';
 
+const APP_BASE = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
+
+function normalizePath(pathname) {
+  if (APP_BASE && pathname === APP_BASE) return '/';
+  if (APP_BASE && pathname.startsWith(`${APP_BASE}/`)) {
+    return pathname.slice(APP_BASE.length) || '/';
+  }
+  return pathname || '/';
+}
+
+function toBrowserPath(nextPath) {
+  const cleanPath = nextPath.startsWith('/') ? nextPath : `/${nextPath}`;
+  if (!APP_BASE) return cleanPath;
+  return cleanPath === '/' ? `${APP_BASE}/` : `${APP_BASE}${cleanPath}`;
+}
+
 function useRoute() {
-  const [path, setPath] = useState(window.location.pathname || '/');
+  const [path, setPath] = useState(normalizePath(window.location.pathname));
   useEffect(() => {
-    const sync = () => setPath(window.location.pathname || '/');
+    const sync = () => setPath(normalizePath(window.location.pathname));
     window.addEventListener('popstate', sync);
     return () => window.removeEventListener('popstate', sync);
   }, []);
   const navigate = (nextPath) => {
-    window.history.pushState({}, '', nextPath);
-    setPath(window.location.pathname || '/');
+    window.history.pushState({}, '', toBrowserPath(nextPath));
+    setPath(normalizePath(window.location.pathname));
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   return [path, navigate];
