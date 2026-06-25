@@ -81,7 +81,11 @@ export function setCustomerSession(session) {
 }
 
 export function money(value) {
-  return new Intl.NumberFormat('es-DO', { style: 'currency', currency: 'DOP', maximumFractionDigits: 0 }).format(value || 0);
+  const formatted = new Intl.NumberFormat('es-DO', {
+    maximumFractionDigits: 0,
+    minimumFractionDigits: 0
+  }).format(Number(value) || 0);
+  return `RD$ ${formatted}`;
 }
 
 export function orderTotals(items = []) {

@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { Grid2X2, List, SlidersHorizontal, Tag, X } from 'lucide-react';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import EmptyState from '../../components/EmptyState/EmptyState';
-import { visibleProducts } from '../../utils/storage';
+import { money, visibleProducts } from '../../utils/storage';
 import './CatalogPage.css';
 
 const emptyFilters = {
@@ -82,8 +82,8 @@ export default function CatalogPage({ store, navigate, query, setQuery, addCart,
     filters.provider ? { key: 'provider', label: filters.provider } : null,
     filters.availability ? { key: 'availability', label: filters.availability } : null,
     filters.type ? { key: 'type', label: filters.type } : null,
-    filters.minPrice ? { key: 'minPrice', label: `Desde RD$${filters.minPrice}` } : null,
-    filters.maxPrice ? { key: 'maxPrice', label: `Hasta RD$${filters.maxPrice}` } : null,
+    filters.minPrice ? { key: 'minPrice', label: `Desde ${money(filters.minPrice)}` } : null,
+    filters.maxPrice ? { key: 'maxPrice', label: `Hasta ${money(filters.maxPrice)}` } : null,
     filters.minRating ? { key: 'minRating', label: `${filters.minRating}+ estrellas` } : null,
     filters.stock ? { key: 'stock', label: filters.stock === 'available' ? 'Con stock' : 'Stock bajo' } : null,
     filters.offerOnly ? { key: 'offerOnly', label: 'Solo ofertas' } : null
@@ -208,13 +208,13 @@ export default function CatalogPage({ store, navigate, query, setQuery, addCart,
               type="number"
               value={filters.minPrice}
               onChange={(event) => setFilters({ ...filters, minPrice: event.target.value })}
-              placeholder={`Min ${priceBounds.min}`}
+              placeholder={`Min ${money(priceBounds.min)}`}
             />
             <input
               type="number"
               value={filters.maxPrice}
               onChange={(event) => setFilters({ ...filters, maxPrice: event.target.value })}
-              placeholder={`Max ${priceBounds.max}`}
+              placeholder={`Max ${money(priceBounds.max)}`}
             />
           </div>
         </label>

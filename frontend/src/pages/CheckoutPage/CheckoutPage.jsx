@@ -280,7 +280,7 @@ export default function CheckoutPage({ store, save, navigate, showToast, custome
                 onClick={() => setForm((prev) => ({ ...prev, payment: 'PayPal / Pago Rápido' }))}
               >
                 <b className="text-paypal-blue">PayPal / Pay Azul</b>
-                <span>Pago rápido en dólares/DOP</span>
+                <span>Pago rapido en pesos dominicanos</span>
               </button>
               <button 
                 type="button" 
@@ -471,7 +471,7 @@ export default function CheckoutPage({ store, save, navigate, showToast, custome
                           </td>
                           <td className="text-center">{item.qty}</td>
                           <td className="text-right">{money(basePrice)}</td>
-                          <td className="text-right">{discount > 0 ? money(discount) : '$0'}</td>
+                          <td className="text-right">{money(discount)}</td>
                           <td className="text-right">{money(finalPrice * item.qty)}</td>
                         </tr>
                       );
@@ -493,7 +493,7 @@ export default function CheckoutPage({ store, save, navigate, showToast, custome
                   <div className="invoice-totals-box">
                     <div className="total-row">
                       <span>SUBTOTAL 0%</span>
-                      <span>$0</span>
+                      <span>{money(0)}</span>
                     </div>
                     <div className="total-row">
                       <span>SUBTOTAL GRAVADO (18%)</span>

@@ -237,7 +237,7 @@ export default function AdminInventory({ store, save, showToast }) {
                     <td className="text-right font-bold">
                       {isEditing ? (
                         <div className="currency-input-wrapper">
-                          <span className="currency-symbol">$</span>
+                          <span className="currency-symbol">RD$</span>
                           <input 
                             type="number"
                             step="0.01"
@@ -255,7 +255,7 @@ export default function AdminInventory({ store, save, showToast }) {
                     <td className="text-right font-bold">
                       {isEditing ? (
                         <div className="currency-input-wrapper">
-                          <span className="currency-symbol">$</span>
+                          <span className="currency-symbol">RD$</span>
                           <input 
                             type="number"
                             step="0.01"
