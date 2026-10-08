@@ -1,9 +1,24 @@
-# Steliant Ecommerce
+# Steliant Nova — plantilla e-commerce
 
-Exhibición de Stephanie López Frías, marca Steliant. Esta copia conserva la interfaz, componentes, navegación y assets del proyecto original `ecommerce-electrocables`. Las ramas originales no se modifican.
+Tienda de tecnología y gadgets con estilo futurista y efecto vidrio (glassmorphism), diseñada por **Steliant**. Es una plantilla de exhibición: solo diseño, sin backend ni pagos reales.
 
-Demo: https://steliant-soft-portfolio.steliantsoft.chatgpt.site/demos/steliant-ecommerce/
+## Qué incluye
 
-Instalar dependencias con npm ci (npm install si el lock del proyecto lo requiere) y ejecutar npm run build dentro del frontend, o en la raíz para Firma, Legal y Tours. La base de publicación es /demos/steliant-ecommerce/.
+- Inicio con esfera holográfica, carrusel 3D de productos arrastrable, aurora animada y cuadrícula de neón.
+- Navegación premium: ticker, mega menú con fotos, cápsula de vidrio compacta al hacer scroll y buscador ⌘K.
+- Vistas propias con transición animada: Tienda (filtros con animación Flip), Producto (galería con lupa y especificaciones), Ofertas (cuenta regresiva), Favoritos y Panel administrativo (KPIs, gráficas y stock bajo).
+- Carrito con barra de envío gratis y checkout en 2 pasos con tarjeta 3D holográfica (Visa / Mastercard / Amex), ITBIS 18 % y animación de empaque.
+- Al confirmar, vuelve al inicio con la tarjeta de seguimiento del pedido y el botón flotante "Mi pedido".
+- Tema claro/oscuro, idioma ES/EN y diseño responsive.
+- Datos de ejemplo: 15 productos y marcas ficticias; imágenes de Unsplash.
 
-Es una muestra: no habilitar APIs de producción ni pagos. YouTube y contactos comerciales pendientes. Los servicios que necesitan backend requieren un despliegue adicional. Nexo usa un adaptador local persistente; Esports muestra torneos de ejemplo y conserva las vistas originales, con módulos de servidor sin conectar y fondos con imágenes en lugar de los videos pesados.
+## Desarrollo
+
+```bash
+cd frontend
+npm install
+npm run dev
+npm run build
+```
+
+La base de publicación por defecto es `/demos/steliant-ecommerce/` (se cambia con la variable `VITE_BASE`).

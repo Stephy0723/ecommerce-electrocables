@@ -1,8 +1,5 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from "vite";
 
 export default defineConfig({
-  plugins: [react()],
-  base: '/demos/steliant-ecommerce/'
+  base: process.env.VITE_BASE || "/demos/steliant-ecommerce/",
 });
-
