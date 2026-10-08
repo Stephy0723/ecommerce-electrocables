@@ -4,3 +4,4 @@ export const ProviderModel = {
   name: 'Provider',
   fields: {},
 };
+

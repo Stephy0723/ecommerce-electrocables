@@ -4,3 +4,4 @@ export const LogModel = {
   name: 'Log',
   fields: {},
 };
+

@@ -261,3 +261,4 @@ export default function CatalogPage({ store, navigate, query, setQuery, addCart,
     </main>
   );
 }
+

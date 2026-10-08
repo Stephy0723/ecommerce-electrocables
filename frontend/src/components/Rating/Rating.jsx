@@ -12,3 +12,4 @@ export default function Rating({ value = 0 }) {
     </span>
   );
 }
+

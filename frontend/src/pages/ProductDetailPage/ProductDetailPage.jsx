@@ -111,3 +111,4 @@ export default function ProductDetailPage({ product, store, navigate, addCart, t
     </main>
   );
 }
+

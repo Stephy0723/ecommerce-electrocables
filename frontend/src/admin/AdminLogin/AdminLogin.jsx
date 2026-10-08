@@ -32,9 +32,9 @@ export default function AdminLogin({ navigate, showToast }) {
       <div className="login-container animate-fade">
         <form onSubmit={submit} className="login-card">
           <div className="login-header">
-            <span className="brand-mark login-brand-mark">EC</span>
+            <span className="brand-mark login-brand-mark">ST</span>
             <div className="brand-title">
-              <h2>ElectroCables</h2>
+              <h2>Steliant Ecommerce</h2>
               <span className="eyebrow">Panel de Administración</span>
             </div>
           </div>
@@ -59,7 +59,7 @@ export default function AdminLogin({ navigate, showToast }) {
                   type="email"
                   value={form.email} 
                   onChange={(event) => setForm({ ...form, email: event.target.value })} 
-                  placeholder="nombre@electrocables.com" 
+                  placeholder="nombre@steliant-ecommerce.com" 
                   required
                 />
               </div>
@@ -92,3 +92,4 @@ export default function AdminLogin({ navigate, showToast }) {
     </main>
   );
 }
+

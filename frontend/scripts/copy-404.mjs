@@ -11,3 +11,4 @@ if (!existsSync(indexPath)) {
 
 copyFileSync(indexPath, fallbackPath);
 console.log('Created dist/404.html for GitHub Pages SPA fallback.');
+

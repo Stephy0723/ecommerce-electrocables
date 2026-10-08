@@ -30,3 +30,4 @@ export default function OrderSummary({ totals, actionLabel, onAction }) {
     </aside>
   );
 }
+

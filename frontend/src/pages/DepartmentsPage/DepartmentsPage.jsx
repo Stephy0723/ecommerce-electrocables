@@ -121,3 +121,4 @@ export default function DepartmentsPage({ store, navigate, addCart, toggleFavori
     </main>
   );
 }
+

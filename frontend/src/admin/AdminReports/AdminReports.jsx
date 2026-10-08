@@ -47,3 +47,4 @@ export default function AdminReports({ store }) {
     </div>
   );
 }
+

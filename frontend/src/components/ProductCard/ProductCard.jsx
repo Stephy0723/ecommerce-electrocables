@@ -67,3 +67,4 @@ export default function ProductCard({ product, store, navigate, addCart, toggleF
     </motion.article>
   );
 }
+

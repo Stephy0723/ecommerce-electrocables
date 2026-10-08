@@ -4,3 +4,4 @@ export function requireAuth(req,res,next){
   next();
 }
 export function allowRoles(...roles){ return (req,res,next)=> roles.includes(req.user?.role) ? next() : res.status(403).json({success:false,message:'No autorizado'}); }
+

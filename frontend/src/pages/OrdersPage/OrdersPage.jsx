@@ -385,3 +385,4 @@ export default function OrdersPage({ store, navigate, addCart, showToast }) {
     </main>
   );
 }
+

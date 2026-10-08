@@ -273,3 +273,4 @@ export default function AdminExpenses({ store, save, showToast }) {
     </div>
   );
 }
+

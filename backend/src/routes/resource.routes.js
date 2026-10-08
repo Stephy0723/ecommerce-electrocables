@@ -9,3 +9,4 @@ export function makeCrudRouter(resource){
   router.delete('/:id',requireAuth,allowRoles('admin'),c.remove);
   return router;
 }
+

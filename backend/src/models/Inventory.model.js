@@ -4,3 +4,4 @@ export const InventoryModel = {
   name: 'Inventory',
   fields: {},
 };
+

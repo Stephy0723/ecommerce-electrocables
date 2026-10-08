@@ -342,3 +342,4 @@ export default function AdminInventory({ store, save, showToast }) {
     </div>
   );
 }
+

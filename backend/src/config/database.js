@@ -4,3 +4,4 @@
 export async function connectDatabase(){
   console.log('DB no conectada todavía. Backend funcionando en modo preparado/mock.');
 }
+

@@ -4,3 +4,4 @@ export const ProductModel = {
   name: 'Product',
   fields: {},
 };
+

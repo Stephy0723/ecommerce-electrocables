@@ -4,3 +4,4 @@ export const CategoryModel = {
   name: 'Category',
   fields: {},
 };
+

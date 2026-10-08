@@ -14,7 +14,7 @@ import {
   ShieldCheck
 } from 'lucide-react';
 
-export const adminCredentials = { email: 'admin@electrocables.com', password: 'admin123' };
+export const adminCredentials = { email: 'admin@steliant-ecommerce.com', password: 'admin123' };
 
 export const publicLinks = [
   { path: '/', label: 'Inicio', icon: Home },
@@ -36,3 +36,4 @@ export const adminLinks = [
   { path: '/admin/reportes', label: 'Reportes', icon: BarChart3 },
   { path: '/admin/logs', label: 'Logs', icon: ShieldCheck }
 ];
+

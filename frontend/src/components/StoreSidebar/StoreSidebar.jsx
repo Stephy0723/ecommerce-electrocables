@@ -11,11 +11,11 @@ export default function StoreSidebar({ path, navigate, store, collapsed, setColl
       <div className="sidebar-header">
         <div className="brand-container">
           <button className="brand-logo" onClick={() => navigate('/')}>
-            <span className="brand-mark">EC</span>
+            <span className="brand-mark">ST</span>
             {!collapsed && (
               <span className="brand-text">
-                <b>ElectroCables</b>
-                <small>Supply Store</small>
+                <b>Steliant Ecommerce</b>
+                <small>Commerce Studio</small>
               </span>
             )}
           </button>
@@ -62,3 +62,4 @@ export default function StoreSidebar({ path, navigate, store, collapsed, setColl
     </aside>
   );
 }
+

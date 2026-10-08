@@ -6,3 +6,4 @@ router.post('/login',login);
 router.post('/register',register);
 router.get('/me',requireAuth,me);
 export default router;
+

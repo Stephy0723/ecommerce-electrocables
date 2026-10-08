@@ -45,15 +45,16 @@ function toBrowserPath(nextPath) {
 }
 
 function useRoute() {
-  const [path, setPath] = useState(normalizePath(window.location.pathname));
+  const [path, setPath] = useState(normalizePath(window.location.hash.slice(1) || '/'));
   useEffect(() => {
-    const sync = () => setPath(normalizePath(window.location.pathname));
+    const sync = () => setPath(normalizePath(window.location.hash.slice(1) || '/'));
     window.addEventListener('popstate', sync);
-    return () => window.removeEventListener('popstate', sync);
+    window.addEventListener('hashchange', sync);
+    return () => { window.removeEventListener('popstate', sync); window.removeEventListener('hashchange', sync); };
   }, []);
   const navigate = (nextPath) => {
-    window.history.pushState({}, '', toBrowserPath(nextPath));
-    setPath(normalizePath(window.location.pathname));
+    window.history.pushState({}, '', '#' + nextPath);
+    setPath(normalizePath(window.location.hash.slice(1) || '/'));
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   return [path, navigate];
@@ -108,12 +109,12 @@ export default function App() {
   const [cartOpen, setCartOpen] = useState(false);
   const [toasts, setToasts] = useState([]);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(() => {
-    return localStorage.getItem('electrocables-sidebar-collapsed') === 'true';
+    return localStorage.getItem('steliant-ecommerce-sidebar-collapsed') === 'true';
   });
 
   const handleSetSidebarCollapsed = (collapsed) => {
     setSidebarCollapsed(collapsed);
-    localStorage.setItem('electrocables-sidebar-collapsed', collapsed);
+    localStorage.setItem('steliant-ecommerce-sidebar-collapsed', collapsed);
   };
 
   const showToast = (message, type = 'success') => {
@@ -136,7 +137,7 @@ export default function App() {
       : [...(store.cart || []), { ...product, qty: 1 }];
     
     // update localStorage and notify listeners
-    localStorage.setItem('electrocables-store-v2', JSON.stringify({ ...store, cart }));
+    localStorage.setItem('steliant-ecommerce-store-v2', JSON.stringify({ ...store, cart }));
     window.dispatchEvent(new Event('store-updated'));
     showToast(`${product.name} agregado al carrito`);
   };
@@ -148,13 +149,13 @@ export default function App() {
       ? store.favorites.filter((item) => item !== id) 
       : [id, ...(store.favorites || [])];
       
-    localStorage.setItem('electrocables-store-v2', JSON.stringify({ ...store, favorites }));
+    localStorage.setItem('steliant-ecommerce-store-v2', JSON.stringify({ ...store, favorites }));
     window.dispatchEvent(new Event('store-updated'));
     showToast(active ? `${product?.name || 'Producto'} eliminado de favoritos` : `${product?.name || 'Producto'} agregado a favoritos`);
   };
 
   const handleSaveStore = (nextStore) => {
-    localStorage.setItem('electrocables-store-v2', JSON.stringify(nextStore));
+    localStorage.setItem('steliant-ecommerce-store-v2', JSON.stringify(nextStore));
     window.dispatchEvent(new Event('store-updated'));
   };
 
@@ -254,4 +255,5 @@ export default function App() {
     </>
   );
 }
+
 

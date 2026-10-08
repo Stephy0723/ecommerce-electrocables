@@ -8,8 +8,8 @@ export default function StoreFooter() {
       <div className="footer-main">
         <div className="footer-column brand-col">
           <div className="footer-logo">
-            <span className="logo-badge">EC</span>
-            <b>ElectroCables Pro</b>
+            <span className="logo-badge">ST</span>
+            <b>Steliant Ecommerce</b>
           </div>
           <p className="footer-desc">
             Distribuidora líder de materiales eléctricos residenciales, comerciales e industriales.
@@ -94,7 +94,7 @@ export default function StoreFooter() {
             <Mail size={16} />
             <div>
               <span>Email:</span>
-              <p>soporte@electrocables.com</p>
+              <p>soporte@steliant-ecommerce.com</p>
             </div>
           </div>
           <div className="contact-item">
@@ -108,8 +108,9 @@ export default function StoreFooter() {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} ElectroCables Supply Store. Todos los derechos reservados. Facturación Electrónica autorizada por SRI.</p>
+        <p>&copy; {new Date().getFullYear()} Steliant Ecommerce Commerce Studio. Todos los derechos reservados. Facturación Electrónica autorizada por SRI.</p>
       </div>
     </footer>
   );
 }
+

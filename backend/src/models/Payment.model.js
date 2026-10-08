@@ -4,3 +4,4 @@ export const PaymentModel = {
   name: 'Payment',
   fields: {},
 };
+

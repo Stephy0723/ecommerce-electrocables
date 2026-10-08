@@ -4,3 +4,4 @@ export const ReportModel = {
   name: 'Report',
   fields: {},
 };
+

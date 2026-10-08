@@ -1,10 +1,10 @@
 import { initialStore } from '../data/seed';
 
-const KEY = 'electrocables-store-v2';
-const OLD_KEY = 'electrocables-store-v1';
-const THEME_KEY = 'electrocables-theme';
-const ADMIN_KEY = 'electrocables-admin-session';
-const CUSTOMER_KEY = 'electrocables-customer-session';
+const KEY = 'steliant-ecommerce-store-v2';
+const OLD_KEY = 'steliant-ecommerce-store-v1';
+const THEME_KEY = 'steliant-ecommerce-theme';
+const ADMIN_KEY = 'steliant-ecommerce-admin-session';
+const CUSTOMER_KEY = 'steliant-ecommerce-customer-session';
 const CATALOG_ASSETS_VERSION = 2;
 
 const cloneInitial = () => JSON.parse(JSON.stringify(initialStore));
@@ -113,3 +113,4 @@ export function orderTotals(items = []) {
 export function visibleProducts(products = []) {
   return products.filter((product) => !product.hidden);
 }
+

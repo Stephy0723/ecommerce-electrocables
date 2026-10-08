@@ -18,3 +18,4 @@ export default function EmptyState({ title, text, action, onAction, compact = fa
     </div>
   );
 }
+

@@ -381,8 +381,8 @@ export default function CheckoutPage({ store, save, navigate, showToast, custome
                 <div className="invoice-sheet-header">
                   <div className="issuer-details">
                     <div className="issuer-logo">
-                      <span>EC</span>
-                      <b>ElectroCables Pro S.A.</b>
+                      <span>ST</span>
+                      <b>Steliant Ecommerce S.A.</b>
                     </div>
                     <p className="issuer-sub">Importadora & Distribuidora de Materiales Eléctricos</p>
                     <p>Av. Juan Tanca Marengo #405, Guayaquil, Ecuador</p>
@@ -523,3 +523,4 @@ export default function CheckoutPage({ store, save, navigate, showToast, custome
     </main>
   );
 }
+

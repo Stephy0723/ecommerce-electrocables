@@ -218,3 +218,4 @@ export default function AdminProducts({ store, save, showToast }) {
     </div>
   );
 }
+

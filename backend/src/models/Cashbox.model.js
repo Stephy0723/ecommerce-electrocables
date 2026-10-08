@@ -4,3 +4,4 @@ export const CashboxModel = {
   name: 'Cashbox',
   fields: {},
 };
+

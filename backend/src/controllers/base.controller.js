@@ -8,3 +8,4 @@ export function crudController(resource){
     remove:(req,res)=>{db[resource]=db[resource].filter(x=>x.id!==req.params.id); res.json({success:true,message:'Eliminado'});}
   }
 }
+

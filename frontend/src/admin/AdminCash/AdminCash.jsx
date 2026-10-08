@@ -280,3 +280,4 @@ export default function AdminCash({ store, save, showToast }) {
     </div>
   );
 }
+

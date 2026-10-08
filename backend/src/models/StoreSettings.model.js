@@ -4,3 +4,4 @@ export const StoreSettingsModel = {
   name: 'StoreSettings',
   fields: {},
 };
+

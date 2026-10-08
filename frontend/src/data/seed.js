@@ -350,3 +350,4 @@ export const initialStore = {
   adminSession: null,
   roles: ['Admin', 'Vendedor', 'Cajero', 'Inventario']
 };
+

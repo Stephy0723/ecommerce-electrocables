@@ -106,3 +106,4 @@ GET  /api/reports
 El frontend NO consume el backend todavía.
 El backend NO depende de una base de datos real todavía.
 Más adelante se puede conectar MongoDB o PostgreSQL en `backend/src/config/database.js`.
+

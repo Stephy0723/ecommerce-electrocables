@@ -32,7 +32,7 @@ export default function AccountPage({
     const existingClient = (store.clients || []).find((client) => client.email?.toLowerCase() === email);
     const nextCustomer = {
       id: existingClient?.id || crypto.randomUUID(),
-      name: mode === 'login' ? existingClient?.name || form.name || 'Cliente ElectroCables' : form.name.trim(),
+      name: mode === 'login' ? existingClient?.name || form.name || 'Cliente Steliant Ecommerce' : form.name.trim(),
       email,
       phone: form.phone.trim() || existingClient?.phone || '',
       city: form.city.trim() || existingClient?.city || '',
@@ -114,7 +114,7 @@ export default function AccountPage({
           <span className="account-icon"><UserRound size={24} /></span>
           <div>
             <span className="eyebrow">Cuenta de cliente</span>
-            <h1>Entrar a ElectroCables</h1>
+            <h1>Entrar a Steliant Ecommerce</h1>
             <p>Accede para revisar pedidos, guardar datos de envio y avanzar mas rapido en checkout.</p>
           </div>
         </div>
@@ -200,3 +200,4 @@ export default function AccountPage({
     </main>
   );
 }
+

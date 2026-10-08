@@ -1,9 +1,9 @@
 {
-  "homepage": "https://salyl.github.io/ecommerce-electrocables/",
+  "homepage": "https://salyl.github.io/ecommerce-steliant-ecommerce/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:pages": "vite build --base=/ecommerce-electrocables/ && node scripts/copy-404.mjs",
+    "build:pages": "vite build --base=/ecommerce-steliant-ecommerce/ && node scripts/copy-404.mjs",
     "preview": "vite preview",
     "predeploy": "npm run build:pages",
     "deploy": "gh-pages -d dist"
@@ -22,3 +22,4 @@
     "gh-pages": "^6.3.0"
   }
 }
+

@@ -161,3 +161,4 @@ export default function HomePage({ store, navigate, addCart, toggleFavorite }) {
     </main>
   );
 }
+

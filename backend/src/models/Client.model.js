@@ -4,3 +4,4 @@ export const ClientModel = {
   name: 'Client',
   fields: {},
 };
+

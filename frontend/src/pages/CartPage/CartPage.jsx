@@ -76,3 +76,4 @@ export default function CartPage({ store, save, navigate, showToast }) {
     </main>
   );
 }
+

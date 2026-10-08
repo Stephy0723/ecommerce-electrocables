@@ -81,3 +81,4 @@ export default function AdminRoute({ path, store, save, showToast }) {
   
   return <AdminDashboard store={store} />;
 }
+

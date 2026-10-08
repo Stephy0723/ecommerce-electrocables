@@ -27,7 +27,7 @@ export default function AdminShell({ path, navigate, session, children }) {
       <aside className="admin-sidebar">
         <div className="sidebar-header-wrapper">
           <button className="admin-brand" onClick={() => navigate('/admin/dashboard')}>
-            <span className="brand-mark admin-brand-mark">EC</span>
+            <span className="brand-mark admin-brand-mark">ST</span>
             {!collapsed && (
               <span className="admin-brand-text">
                 <b>ElectroAdmin</b>
@@ -68,7 +68,7 @@ export default function AdminShell({ path, navigate, session, children }) {
             <span className="eyebrow">Panel de Administración</span>
             <h2>{currentLink?.label || 'Dashboard'}</h2>
             <p className="page-description-text">
-              {pageDescriptions[path] || 'Gestión interna de ElectroCables Pro.'}
+              {pageDescriptions[path] || 'Gestión interna de Steliant Ecommerce.'}
             </p>
           </div>
           <div className="admin-user">
@@ -96,3 +96,4 @@ export default function AdminShell({ path, navigate, session, children }) {
     </div>
   );
 }
+

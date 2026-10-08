@@ -43,3 +43,4 @@ export default function FavoritesPage({ store, navigate, addCart, toggleFavorite
     </main>
   );
 }
+
